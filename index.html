@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas de Calidad</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Generador de Herramientas de Calidad</h1>
+
+    <!-- Menú de selección para escoger la gráfica -->
+    <div class="selector">
+        <label for="chartSelector">Seleccione una gráfica:</label>
+        <select id="chartSelector">
+            <option value="barChart">Gráfica de Barras</option>
+            <option value="pieChart">Gráfica de Pastel</option>
+            <option value="scatterChart">Gráfica de Dispersión</option>
+            <option value="paretoChart">Diagrama de Pareto</option>
+            <option value="controlChart">Gráfica de Control</option>
+            <option value="histogramChart">Histograma</option>
+            <option value="fishboneDiagram">Diagrama de Espina de Pescado</option>
+            <option value="verificationTable">Hoja de Verificación</option>
+        </select>
+    </div>
+
+    <!-- Contenedores para los gráficos -->
+    <div class="chart-container" id="barChartContainer">
+        <canvas id="barChart"></canvas>
+    </div>
+    <div class="chart-container" id="pieChartContainer">
+        <canvas id="pieChart"></canvas>
+    </div>
+    <div class="chart-container" id="scatterChartContainer">
+        <canvas id="scatterChart"></canvas>
+    </div>
+    <div class="chart-container" id="paretoChartContainer">
+        <canvas id="paretoChart"></canvas>
+    </div>
+    <div class="chart-container" id="controlChartContainer">
+        <canvas id="controlChart"></canvas>
+    </div>
+    <div class="chart-container" id="histogramChartContainer">
+        <canvas id="histogramChart"></canvas>
+    </div>
+
+    <!-- Diagrama de Espina de Pescado -->
+    <div class="diagram-container" id="fishboneDiagramContainer">
+        <h2>Diagrama de Espina de Pescado</h2>
+        <div id="fishboneDiagram"></div>
+    </div>
+
+    <!-- Hoja de Verificación -->
+    <div class="verification-sheet" id="verificationTableContainer">
+        <h2>Hoja de Verificación</h2>
+        <table id="verificationTable">
+            <tr><th>Item</th><th>Verificación</th></tr>
+        </table>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

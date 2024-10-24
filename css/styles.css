@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.selector {
+    margin-bottom: 20px;
+}
+
+.chart-container, .diagram-container, .verification-sheet {
+    display: none; /* Ocultamos todos inicialmente */
+    width: 50%;
+    margin: 20px auto;
+}
+
+table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+}
