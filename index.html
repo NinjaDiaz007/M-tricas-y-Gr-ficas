@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herramientas de Calidad</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/wolf.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Generador de Herramientas de Calidad</h1>
 
     <!-- Menú de selección para escoger la gráfica -->
-    <div class="selector">
+    <div class="selector mt-3 mb-4">
         <label for="chartSelector">Seleccione una gráfica:</label>
         <select id="chartSelector">
             <option value="barChart">Gráfica de Barras</option>
@@ -53,9 +54,9 @@
 
     <!-- Hoja de Verificación -->
     <div class="verification-sheet" id="verificationTableContainer">
-        <h2>Hoja de Verificación</h2>
+        <h2 class="mb-3">Hoja de Verificación</h2>
         <table id="verificationTable">
-            <tr><th>Item</th><th>Verificación</th></tr>
+            <tr><th>Tareas A Realizar</th><th>Verificación</th></tr>
         </table>
     </div>
 

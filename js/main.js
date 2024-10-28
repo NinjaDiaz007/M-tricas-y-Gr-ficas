@@ -1,9 +1,16 @@
+
+
 // Función para ocultar todos los gráficos y diagramas
 function hideAllCharts() {
     const allContainers = document.querySelectorAll('.chart-container, .diagram-container, .verification-sheet');
     allContainers.forEach(container => {
         container.style.display = 'none';
     });
+}
+
+// Generar datos aleatorios para las gráficas
+function getRandomData(numPoints, maxValue = 100) {
+    return Array.from({ length: numPoints }, () => Math.floor(Math.random() * maxValue));
 }
 
 // Función para mostrar el gráfico seleccionado
@@ -31,8 +38,9 @@ const barChart = new Chart(ctxBar, {
     data: {
         labels: ['A', 'B', 'C', 'D'],
         datasets: [{
-            label: 'Valores',
-            data: [12, 19, 3, 5],
+            label: 'Ventas',
+            //data: [12, 19, 3, 5],
+            data: getRandomData(4),
             backgroundColor: ['red', 'blue', 'green', 'yellow']
         }]
     },
@@ -52,7 +60,8 @@ const pieChart = new Chart(ctxPie, {
     data: {
         labels: ['A', 'B', 'C'],
         datasets: [{
-            data: [10, 20, 30],
+            //data: [10, 20, 30],
+            data: getRandomData(3),
             backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe']
         }]
     }
@@ -77,7 +86,7 @@ const scatterChart = new Chart(ctxScatter, {
 
 // 4. Diagrama de Pareto (Gráfica de Barras + Línea)
 const ctxPareto = document.getElementById('paretoChart').getContext('2d');
-const paretoData = [40, 25, 15, 10, 5];
+const paretoData = getRandomData(5)//[40, 25, 15, 10, 5];
 const total = paretoData.reduce((a, b) => a + b, 0);
 const cumulative = paretoData.map((sum => value => sum += value)(0));
 
@@ -122,7 +131,8 @@ const controlChart = new Chart(ctxControl, {
         labels: ['1', '2', '3', '4', '5', '6', '7'],
         datasets: [{
             label: 'Valores',
-            data: [3, 7, 4, 6, 8, 5, 9],
+            //data: [3, 7, 4, 6, 8, 5, 9],
+            data: getRandomData(7),
             borderColor: 'green',
             fill: false
         }]
@@ -138,7 +148,7 @@ const controlChart = new Chart(ctxControl, {
 
 // 6. Histograma
 const ctxHistogram = document.getElementById('histogramChart').getContext('2d');
-const histogramData = [1, 2, 2, 3, 3, 3, 4, 4, 5];
+const histogramData = getRandomData(9)//[1, 2, 2, 3, 3, 3, 4, 4, 5];
 const histogramChart = new Chart(ctxHistogram, {
     type: 'bar',
     data: {
@@ -163,16 +173,16 @@ const histogramChart = new Chart(ctxHistogram, {
 
 // 7. Diagrama de Espina de Pescado (Manual)
 const fishboneDiagram = document.getElementById('fishboneDiagram');
+let rambom = Math.floor(Math.random() * 4);
+let img = ["./img/pescado1.png", "./img/pescado2.png", "./img/pescado3.png"];
 fishboneDiagram.innerHTML = `
-    <svg width="600" height="300">
-        <line x1="50" y1="150" x2="550" y2="150" style="stroke:black;stroke-width:2" />
-        <!-- Add more bones and labels as needed -->
-    </svg>
+    <img width="700" height="500" src="${img[rambom]}" alt="Diagramas de Pescado">
+    
 `;
 
 // 8. Hoja de Verificación
 const verificationTable = document.getElementById('verificationTable');
-const verificationData = ['Item 1', 'Item 2', 'Item 3'];
+const verificationData = ['Limpieza en los tanques', 'Limpio la meza de trabajo', 'Ordenado los anaqueles', 'Guntar todas las basura'];
 verificationData.forEach(item => {
     const row = document.createElement('tr');
     row.innerHTML = `<td>${item}</td><td><input type="checkbox"></td>`;
