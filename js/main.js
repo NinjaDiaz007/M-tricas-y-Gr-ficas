@@ -148,7 +148,7 @@ const controlChart = new Chart(ctxControl, {
 
 // 6. Histograma
 const ctxHistogram = document.getElementById('histogramChart').getContext('2d');
-const histogramData = getRandomData(9)//[1, 2, 2, 3, 3, 3, 4, 4, 5];
+const histogramData = [1, 2, 2, 3, 3, 3, 4, 4, 5];
 const histogramChart = new Chart(ctxHistogram, {
     type: 'bar',
     data: {
